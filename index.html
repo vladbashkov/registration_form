@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>Registration Form</title>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="form-body">
+      <h1 class="title">Форма регистрации</h1>
+      <form name="mainForm" method="post" class="form" id="Form">
+        <label for="Name" class="form-text">Имя</label>
+        <input name="nameFormInput" class="input" type="text" id="Name" tabindex="1" pattern="^[А-Яа-яЁё\s]+$">
+        <label for="Surname" class="form-text">Фамилия</label>
+        <input name="surnameFormInput" class="input" type="text" class="surname" id="Surname" tabindex="2" pattern="^[А-Яа-яЁё\s]+$">
+        <label for="Fathersname" class="form-text">Отчество</label>
+        <input name="fathersnameFormInput" class="input" type="text" class="fathersname" id="Fathersname" tabindex="3" pattern="^[А-Яа-яЁё\s]+$">
+        <label for="Institute" class="form-text">Укажите название вашего ВУЗа</label>
+        <input name="instituteFormInput" class="input" type="text" class="institute" id="Institute" tabindex="4" pattern="^[А-Яа-яЁё\s]+$">
+        <label for="Course" class="form-text">Укажите на каком курсе Вы обучаетесь</label>
+        <input name="courseFormInput" class="input" type="text" class="course" id="Course" tabindex="5" pattern="^[А-Яа-яЁё\s]+$">
+        <label for="FormOfStudy" class="form-text">Какая форма обучения</label>
+        <select name="FormOfStudySelect" class="select" id="FormOfStudy" tabindex="6" pattern="^[А-Яа-яЁё\s]+$">
+          <option value="Дневная">Дневная</option>
+          <option value="Заочная">Заочная</option>
+        </select>
+        <label for="Phone" class="form-text">Укажите Ваш телефон</label>
+        <input name="phoneFormInput" class="input" type="tel" id="Phone" tabindex="7" placeholder="+380(XX) XXX-XX-XX" minlength="13" maxlength="13">
+        <label for="Email" class="form-text" id="Email">Укажите Ваш email</label>
+        <input name="emailFormInput" class="input" class="input" type="email" id="Email" tabindex="8">
+        <div id="checkboxContainer" class="checkbox-container">
+          <input name="checkboxForm" type="checkbox" id="Checkbox" tabindex="9">
+          <label for="Checkbox">Даю согласие на обработку моих личных данных</label>
+        </div>
+        <button name="buttonForm" tabindex="10" id="Button" type="submit" onclick="">Отправить</button>
+        <div class="modal" id="Modal">
+          <h3 class="modal-text">Вы заполнили не все поля либо использовали недопустимые символы. Используйте только кириллицу</h3>
+        </div>
+      </form>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="js/maskinput.js"></script>
+    <script type="text/javascript">
+      jQuery(function($){
+      $("#Phone").mask("+380(99) 999-99-99");
+      });
+   </script>
+  </body>
+</html>
